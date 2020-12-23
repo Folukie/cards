@@ -126,6 +126,1248 @@ article.card {
 
 
 
+  @import url('https://fonts.googleapis.com/css?family=Abel');
+
+html, body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);*/
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .additional .user-card svg {
+  top: 50%;
+}
+
+.card .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325C46;
+}
+
+.card .additional .coords span + span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  color: #325C46;
+}
+
+.card .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+$bg-color: #E6E5E1;
+$shdow-gray: #d3d3d5;
+$orange: #DA4D1D;
+$blue: #2b26c3;
+$img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80";
+$img-url2: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  opacity: 0;
+  font-size: 18px;
+  color: #fff;
+  will-change: transform;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+h2{
+  pointer-events:none;
+}
+
+body {
+  background-color: $bg-color;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .card {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 4px;
+
+    &:before {
+      content: "";
+      z-index: 99;
+      position: absolute;
+      top: -10px;
+      left: 32px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-color: $bg-color;
+    }
+    &:after {
+      content: "";
+      z-index: 99;
+      position: absolute;
+      bottom: -10px;
+      left: 32px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-color: $bg-color;
+    }
+    ul {
+      z-index: 99;
+      position: absolute;
+      left: 39px;
+      top: 5px;
+      list-style-type: none;
+      li {
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+        margin: 6px 0;
+        background-color: $bg-color;
+      }
+    }
+    h2 {
+      z-index: 99;
+      font-family: "Poppins", sans-serif;
+      position: absolute;
+      bottom: 0;
+      right: 130px;
+      font-size: 60px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .fa-arrow-right {
+      z-index: 100;
+      position: absolute;
+      right: 75px;
+      bottom: 25px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    p {
+      z-index: 99;
+      position: absolute;
+      top: 20px;
+      right: 70px;
+      color: #333;
+      opacity: 0.7;
+      font-size: 12px;
+      letter-spacing: 1px;
+      writing-mode: vertical-lr;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    .pic {
+      z-index: 100;
+      width: 400px;
+      height: 200px;
+      background-image: url($img-url);
+      background-size: 100% 100%;
+      filter: grayscale(100%);
+    }
+
+    .social {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 180px;
+      height: 64px;
+      border-radius: 80px;
+    }
+
+    .social i:nth-of-type(1) {
+      -webkit-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+    }
+
+    .social i:nth-of-type(2) {
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+    }
+
+    .social i:nth-of-type(3) {
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+
+    .social i:nth-of-type(4) {
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    }
+
+    &:hover i {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    button {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      background-color: $orange;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      outline:none;
+      transition: all 0.3s ease;
+      mix-blend-mode: hard-light;
+
+      i {
+        font-size: 3rem;
+      }
+    }
+
+    &:hover button {
+      transform: scale(16.5);
+    }
+
+    &:hover p {
+      color: #fff;
+    }
+    
+    &:hover .pic {
+      filter: grayscale(0);
+      
+    }
+  }
+  
+  .card2 {
+    .pic {
+      background-image: url($img-url2);
+    }
+    button {
+      background-color: $blue;
+    }
+  }
+}
+
+.dr {
+position: absolute;
+  bottom: 16px; 
+  right: 16px;
+  width:100px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+$bg: #FEF5DF;
+
+body {
+  background-color: $bg;
+}
+
+.container {
+  width: 300px;
+  height: 400px;
+  
+  position: absolute;
+  top:0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+  
+  background: url("https://i.pinimg.com/564x/6f/5a/b1/6f5ab1b470beeeeaf285bb451c63ac8f.jpg");
+  background-color: black;
+  background-size: cover;
+  cursor: pointer;
+  
+  -webkit-box-shadow: 0 0 5px #000;
+        box-shadow: 0 0 5px #000;
+  }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  
+  background: rgba(77, 77, 77, .9);
+  color: $bg;
+  opacity: 0;
+  transition: all 0.5s;
+  
+  font-family: 'Playfair Display', serif;
+}
+
+
+.items {
+  padding-left: 20px;
+  letter-spacing: 3px;
+}
+
+.head {
+  font-size: 30px;
+  line-height: 40px;
+  
+  transform: translateY(40px);
+  transition: all 0.7s;
+  hr {
+    display: block;
+    width: 0;
+    
+    border: none;
+    border-bottom: solid 2px $bg;
+    
+    position: absolute;
+    bottom: 0; left:20px;
+    
+    transition: all .5s;
+  }
+}
+
+.price {
+  font-size: 22px;
+  line-height: 10px;
+  font-weight: bold;  
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s;
+  .old {
+    text-decoration: line-through;
+    color: lighten(rgb(77, 77, 77),40%);
+  }
+}
+
+.cart {
+  font-size: 12px;
+  opacity: 0;
+  letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
+  transform: translateY(40px);
+  transition: all 0.7s;
+  i {
+    font-size: 16px;
+  }
+  span {
+    margin-left: 10px;
+  }
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  & .head {
+    transform: translateY(0px);
+  }
+  
+  & hr {
+    width: 75px;
+    transition-delay: 0.4s;
+  }
+  
+  & .price {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+  }
+  
+  & .cart {
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(45deg, #7175da, #9790f2);
+	font-family: "Muli", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.courses-container {
+}
+
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 100%;
+	margin: 20px;
+	overflow: hidden;
+	width: 700px;
+}
+
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #2a265f;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #2a265f;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #2a265f;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+
+/* SOCIAL PANEL CSS */
+.social-panel-container {
+	position: fixed;
+	right: 0;
+	bottom: 80px;
+	transform: translateX(100%);
+	transition: transform 0.4s ease-in-out;
+}
+
+.social-panel-container.visible {
+	transform: translateX(-10px);
+}
+
+.social-panel {
+	background-color: #fff;
+	border-radius: 16px;
+	box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
+	border: 5px solid #001f61;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Muli";
+	position: relative;
+	height: 169px;
+	width: 370px;
+	max-width: calc(100% - 10px);
+}
+
+.social-panel button.close-btn {
+	border: 0;
+	color: #97a5ce;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.social-panel button.close-btn:focus {
+	outline: none;
+}
+
+.social-panel p {
+	background-color: #001f61;
+	border-radius: 0 0 10px 10px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 2px 17px 6px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin: 0;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 235px;
+}
+
+.social-panel p i {
+	margin: 0 5px;
+}
+
+.social-panel p a {
+	color: #ff7500;
+	text-decoration: none;
+}
+
+.social-panel h4 {
+	margin: 20px 0;
+	color: #97a5ce;
+	font-family: "Muli";
+	font-size: 14px;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+.social-panel ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.social-panel ul li {
+	margin: 0 10px;
+}
+
+.social-panel ul li a {
+	border: 1px solid #dce1f2;
+	border-radius: 50%;
+	color: #001f61;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	text-decoration: none;
+}
+
+.social-panel ul li a:hover {
+	border-color: #ff6a00;
+	box-shadow: 0 9px 12px -9px #ff6a00;
+}
+
+.floating-btn {
+	border-radius: 26.5px;
+	background-color: #001f61;
+	border: 1px solid #001f61;
+	box-shadow: 0 16px 22px -17px #03153b;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+
+.floating-btn:hover {
+	background-color: #ffffff;
+	color: #001f61;
+}
+
+.floating-btn:focus {
+	outline: none;
+}
+
+.floating-text {
+	background-color: #001f61;
+	border-radius: 10px 10px 0 0;
+	color: #fff;
+	font-family: "Muli";
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
+}
+
+.floating-text a {
+	color: #ff7500;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+	.social-panel-container.visible {
+		transform: translateX(0px);
+	}
+
+	.floating-btn {
+		right: 10px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  $customBackCol: #8855DD
+$pink: #F58
+$c1: #a6aad1
+$c2: #5f5f80
+$break-med: 900px
+$break-small: 700px
+$cardCol: #1D1D2B 
+
+    
+*
+  font-family: rounded, sans-serif
+  
+html
+  background: #223
+  
+
+    
+.plx-card
+  transition: all 600ms ease
+  max-width: 1100px
+  display: flex
+  position: relative
+  overflow: hidden
+  margin: 30px 0 
+  filter: drop-shadow(0 2px 1rem #112)
+  border-radius: 4px
+  &.bronze
+    overflow: visible 
+    @media screen and (max-width: 1000px) and (min-width: $break-small)
+      left: 120px
+  @media screen and (min-width: $break-small) 
+    &.gold
+      height: 280px    
+    &.silver
+      height: 150px
+      border-radius: 2px
+    &.bronze
+      height: 134px
+      width: 480px
+      display: inline-flex
+      margin: 30px 30px
+      
+
+  @media screen and (max-width: $break-small)
+    height: auto
+    //min-height: 350px
+    width: auto
+    flex-direction: column
+    border-radius: 2px
+    margin: 25px 15px
+    &.silver
+      height: 270px
+      .flags
+        margin: 0 10px
+      .links 
+        text-align: right
+        justify-content: flex-end        
+        a
+          font-size: 24px
+          height: 30px
+          margin: -8px 5px 5px 5px
+          padding: 6px 0px 1px 0
+          border-radius: 2px
+          color: #FFFA
+          background: $customBackCol
+          &:hover
+            color: #FFF
+    
+
+.pxc-avatar
+  transition: all 600ms ease
+  display: flex
+  flex-direction: column
+  height: auto
+  width: 150px
+  justify-content: space-around
+  .bronze &
+    img      
+      width: 90px
+      height: 90px
+      top: -15px
+      left: -20px
+      position: absolute
+
+  @media screen and (max-width: $break-small)
+    width: 100%
+    height: 100px  
+    justify-content: space-around
+    align-items: center
+    .silver &
+      img
+        position: absolute
+        width: 100px
+        height: 100px
+        top: -80px
+        right: 20px
+    .bronze &
+      height: 150px
+      img
+        top: -105px
+        left: -10px 
+        height: 80px
+        width: 80px
+        
+
+  img
+      transition: all 600ms ease
+      width: 150px
+      height: 150px
+      border-radius: 100%
+      box-shadow: 0 1px 1rem rgba(10,10,25,.5)
+      position: relative
+      z-index: 1
+      @media screen and (max-width: $break-med)
+        width: 125px
+        height: 125px
+      @media screen and (max-width: $break-small)
+        margin-top: 100px
+
+
+
+.pxc-bg
+  transition: all 600ms ease
+  border-radius: 2px
+  height: 100%
+  width: calc(100% - 75px)
+  position: absolute
+  z-index: 0
+  pointer-events: none
+  left: 75px    
+  background-size: cover
+  background-position: right
+  background-color: #2b2b95
+  .silver &
+    height: 100%
+    background-size: contain
+    @media screen and (max-width: $break-small)
+      height: 60%
+      top: 30px
+      
+
+  .bronze &
+    background-size: cover
+    position: absolute
+    top: 0
+    left: 0 
+    width: 480px
+    height: 100%
+    max-height: 80px
+    border-radius: 0
+    background-position: 0 -10px
+    
+  @media screen and (max-width: $break-med)
+    left: 50px     
+  @media screen and (max-width: $break-small)
+    .silver & 
+      background-position: top right
+    left: 0
+    top: 0
+    height: 200px
+    width: 100%
+    border-radius: 0        
+
+.pxc-subcard
+  transition: all 600ms ease
+  border-radius: 3px
+  background: $cardCol
+  width: 650px
+  margin: 25px 200px 25px -25px
+  z-index: 0
+  padding: 15px 25px 15px 40px
+  position: relative
+  display: flex
+  flex-direction: column
+  box-shadow: 0 1px 1rem rgba(10,10,25,.3)
+  .gold &
+  .silver &
+    @media screen and (min-width: $break-small) 
+      margin: 0 0 0 -75px
+      padding: 15px 25px 15px 90px
+    @media screen and (max-width: $break-small)
+      padding: 15px
+      margin: 5px 
+      flex: 0 1 auto
+      
+  .bronze &
+    position: absolute
+    bottom: 0
+    margin: 0 
+    padding: 15px 10px 10px 70px
+    width: 400px
+    height: auto
+    max-height: 80px
+    border-radius: 0
+
+
+  @media screen and (max-width: $break-med)
+    margin-right: 120px
+    margin-left: -32px
+  @media screen and (max-width: $break-small)
+    margin: 25px 15px 30px 15px
+    padding: 60px 25px 20px
+    width: auto
+    height: auto
+    flex: 1 0 auto
+    .silver &
+      padding-top: 20px
+
+.pxc-stopper
+  transition: all 600ms ease
+  height: 100%
+  width: calc(60%)
+  background: #FFF8
+  display: block
+  position: absolute
+  z-index: 0
+  left: 75px  
+  .bronze &
+    display: none
+  @media screen and (max-width: $break-med)
+    left: 50px  
+  @media screen and (max-width: $break-small)
+    left: 0
+    width: 100%
+    top: 200px
+    height: calc(100% - 200px)
+    background: white
+    border-radius: 0
+    .silver &
+      height: 50%
+      bottom: 0
+      top: initial
+
+.pxc-tags
+  position: absolute
+  bottom: -15px
+  right: 10px
+  height: 32px
+  overflow: hidden
+  text-align: right
+  .silver &,
+  .bronze &
+    display: none
+    
+  div
+    color: white
+    display: inline-block
+    background: $customBackCol
+    border-radius: 12px
+    padding: 2px 10px
+    line-height: 1.7
+    margin: 4px 4px
+    font-size: 12px
+    height: 20px
+  @media screen and (max-width: $break-small)
+    height: 64px      
+    text-align: center
+    position: relative
+    width: 100%
+    bottom: 0
+    left: 0
+    margin-bottom: 10px
+    div
+      color: $customBackCol
+      border: solid 1px $customBackCol
+      background: transparent
+
+
+.pxc-title
+  font-size: 24px
+  margin-bottom: 4px
+  color: white
+  width: calc(100% - 50px)
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+  flex: 0 0 auto
+  .silver &
+  .bronze &
+    font-size: 18px
+  @media screen and (max-width: $break-small)
+    font-size: 16px
+    white-space: initial
+    overflow: initial
+    text-overflow: initial
+
+.pxc-sub
+  font-size: 14px
+  margin: 2px 0 8px 0
+  //max-height: 50px
+  flex: 1 1 auto
+  overflow: hidden 
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1.0) 80%,transparent 100%)
+  color: $c1    
+  .silver &
+    overflow: visible
+  @media screen and (max-width: $break-small)
+    font-size: 13px
+
+.pxc-feats
+  font-size: 13px
+  color: $c2
+  flex: 1 1 auto
+  //max-height: 50px
+  padding-bottom: 5px
+  margin-bottom: 5px
+  line-height: 1.3
+  overflow: hidden
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1.0) 50%,transparent 100%)
+  .silver &,
+  .bronze &
+    display: none
+  
+  @media screen and (max-width: $break-small)
+    font-size: 12px
+    margin-top: 10px
+    text-align: center
+
+  span:not(:first-child):before
+    content: " • "
+    margin: 3px
+
+.bottom-row
+  flex: 0 1 auto
+  margin-top: 10px
+  display: flex    
+  justify-items: space-around
+  align-items: center  
+  @media screen and (max-width: $break-small)
+      border-top: solid 1px rgba(255,255,255,.05)
+      padding-top: 5px
+
+  .pxc-info
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .bronze &
+      display: none
+    @media screen and (max-width: $break-small)
+      position: absolute
+      bottom: -28px
+      left: -10px
+      justify-content: space-between
+      width: 100%
+      .region
+        color: #112
+        font-size: 13px
+        text-transform: uppercase
+  .links
+    display: flex
+    align-content: flex-end
+    flex: 1 0 auto
+    justify-content: flex-end     
+    a
+      .bronze &
+        display: none
+      color: #99D
+      font-size: 28px
+      text-align: center
+      width: 48px
+      height: 48px        
+      display: inline-block
+      margin: 0 10px
+      cursor: pointer
+      &:hover
+        color: #EEF
+
+    @media screen and (max-width: $break-small)
+      justify-content: center
+      margin-top: 10px
+      margin-bottom: -10px
+      a
+        color: $c1
+        
+
+
+  .flags
+    overflow: hidden
+    height: 23px
+    span
+      margin: 2px 6px
+      background: white
+      border-radius: 3px
+      width: 24px
+      height: 16px
+      display: inline-block
+
+  .region
+    color: white
+    margin-left: 8px
+    //background: red
+
+.bronze .discordLink
+  display: flex !important
+  position: absolute
+  left: -5px
+  bottom: 5px
+  justify-content: space-around
+  align-items: center
+  
+
 
 
 
