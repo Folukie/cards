@@ -5,8 +5,228 @@ body{
     display: grid;
     grid-template-columns: 1fr;
 }
+
+
+
+
+
+
+
+.tc-link {
+	position:relative;
+	
+  }
+  .tc-link:link, .tc-link:visited, .tc-link:active {
+		text-decoration: none;
+		color:lighten(#C32361, 5);
+		text-shadow: 2px 2px 2px darken(#152536, 10);
+		padding-bottom:3px;
+    font-weight: bold;
+  }
+	.tc-link::after {
+		content:"";
+}
+.tc-link:hover::after {
+  width:100%;
+  box-shadow:0 1px 4px rgba(#000, .3);
+}
+
+.note {
+	margin-top: 30px;
+	color:#fff;
+	font-size: 1rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
+article.card {
+	@include pos(absolute, 50%, 50%);
+	@include size(350px, 350px);
+	transform:translate(-50%, -50%) translateZ(0);
+	border-radius:3px;
+	box-shadow:0 1px 4px rgba(#000, .3);
+	overflow:hidden;
+	
+  }
+  .thumb {
+		@include size(auto, 260px);
+		background: url('#{$host}new-york-city.png') no-repeat center;
+		background-size:cover;
+		border-radius:3px;
+	}
+	.infos {
+		@include size(auto, 350px);
+		position:relative;
+		padding:14px 24px;
+		background:#fff;
+    transition:4s .15s cubic-bezier(.17,.67,.5,1.03);
+  }
+		.tc-title {
+			position:relative;
+			margin: 10px 0;
+			letter-spacing: 3px;
+			color:#152536;
+			font-size: 1rem;
+			text-transform: uppercase;
+			text-shadow: 0 0 0px lighten(#152536, 20);
+		}
+		.tc-flag {
+			@include pos(absolute, $top:50%, $right: 0);
+			transform:translateY(-50%);
+			@include size(35px, 23px);
+			background:url($flag) no-repeat top right;
+			background-size:100% auto;
+			display:inline-block;
+		}
+		.tc-date, .tc-seats {
+			margin-bottom: 10px;
+			text-transform: uppercase;
+			font-size: .85rem;
+			color:rgba(#152536, .7);
+		}
+		.tc-seats {
+			display:inline-block;
+			margin-bottom: 24px;
+			padding-bottom:24px;
+			border-bottom:1px solid rgba(#000, .2);
+			opacity:0;
+			transition:.5s .25s cubic-bezier(.17,.67,.5,1.03);
+		}
+		.tc-txt {
+			line-height: 2;
+			font-size: .95rem;
+			color:rgba(#152536, .7);
+			opacity:0;
+			transition:.5s .25s cubic-bezier(.17,.67,.5,1.03);
+		}
+		.tc-details {
+			@include pos(absolute, $left:0, $bottom:0);
+			margin: 10px 0;
+			padding:20px 24px;
+			letter-spacing: 1px;
+			color:#4e958b;
+			font-size: .9rem;
+			text-transform: uppercase;
+			cursor:pointer;
+			opacity:0;
+			transition:.5s .25s cubic-bezier(.17,.67,.5,1.03);
+		}
+	.tc-details:hover .infos {
+		transform:translateY(-260px);
+  }
+  .tc-seats, .tc-txt, .tc-details {
+    opacity:1;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.second-card {
+  display: grid;
+  width: 114px;
+  grid-gap: 60px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  align-items: start;
+
+}
+.sc-item{
+  background-color: #fff;
+  border-radius: .40px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  transition: .2s;
+  height:100% !important;
+}
+
+.sc-item:hover {
+  transform: translateY(-.5%);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .2);
+}
+.sc-content {
+  padding: 30px 30px;
+}
+.sc-header {
+  font-size: 30px;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.50px;
+}
+.sc-card-text {
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  color: darken(#404040, 1%);
+  margin-bottom: 5px;
+}
+ 
+
+.sc-img {
+  display: block;
+  width: 100% !important;
+  height: 180px;
+  object-fit: cover;
+ }
+ sc-card:hover,
+ sc-card:active {
+    background-color: darken(#e6ecff, 2%);         
+ }
+ .sc-card-btn {
+   text-decoration: none !important;
+    display: block;
+    width: 100%;
+    padding: 1.50px;
+    font-size: 20px;
+    text-align: center;
+    color: #3363ff !important;
+    background-color: #e6ecff !important;
+    border: none;
+    border-radius: .40px;
+    transition: .2s;
+    cursor: pointer;
+}
+ span {
+  margin-left: 1.50px;
+  transition: .2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-.card {
+.first-card {
     background: #fff;
     border-radius: 4px;
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
@@ -18,24 +238,24 @@ body{
   }
   .card h2 {
     margin: 0;
-    padding: 0 1rem;
+    padding: 0 10px;
   }
   .card .title {
-    padding: 1rem;
+    padding: 10px;
     text-align: right;
     color: green;
     font-weight: bold;
     font-size: 12px;
   }
   .card .desc {
-    padding: 0.5rem 1rem;
+    padding: 0.50px 10px;
     font-size: 12px;
   }
   .card .actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.50px 10px;
   }
   .card svg {
     width: 85px;
@@ -99,176 +319,8 @@ body{
 
 
 
-    .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-      }
-      
-      .card {
-        width: 450px;
-        height: 250px;
-        background-color: #fff;
-        background: linear-gradient(#f8f8f8, #fff);
-        box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
-        border-radius: 6px;
-        overflow: hidden;
-        position: relative;
-        margin: 1.5rem;
-      }
-      
-      .card h1 {
-        text-align: center;
-      }
-      
-      .card .additional {
-        position: absolute;
-        width: 150px;
-        height: 100%;
-        background: linear-gradient(#dE685E, #EE786E);
-        transition: width 0.4s;
-        overflow: hidden;
-        z-index: 2;
-      }
-      
-      .card.green .additional {
-        background: linear-gradient(#92bCa6, #A2CCB6);
-      }
-      
-      
-      .card:hover .additional {
-        width: 100%;
-        border-radius: 0 5px 5px 0;
-      }
-      
-      .card .additional .user-card {
-        width: 150px;
-        height: 100%;
-        position: relative;
-        float: left;
-      }
-      
-      .card .additional .user-card::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 10%;
-        right: -2px;
-        height: 80%;
-        border-left: 2px solid rgba(0,0,0,0.025);*/
-      }
-      
-      .card .additional .user-card .level,
-      .card .additional .user-card .points {
-        top: 15%;
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 0.75em;
-        font-weight: bold;
-        background: rgba(0,0,0,0.15);
-        padding: 0.125rem 0.75rem;
-        border-radius: 100px;
-        white-space: nowrap;
-      }
-      
-      .card .additional .user-card .points {
-        top: 85%;
-      }
-      
-      .card .additional .user-card svg {
-        top: 50%;
-      }
-      
-      .card .additional .more-info {
-        width: 300px;
-        float: left;
-        position: absolute;
-        left: 150px;
-        height: 100%;
-      }
-      
-      .card .additional .more-info h1 {
-        color: #fff;
-        margin-bottom: 0;
-      }
-      
-      .card.green .additional .more-info h1 {
-        color: #224C36;
-      }
-      
-      .card .additional .coords {
-        margin: 0 1rem;
-        color: #fff;
-        font-size: 1rem;
-      }
-      
-      .card.green .additional .coords {
-        color: #325C46;
-      }
-      
-      .card .additional .coords span + span {
-        float: right;
-      }
-      
-      .card .additional .stats {
-        font-size: 2rem;
-        display: flex;
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        right: 1rem;
-        top: auto;
-        color: #fff;
-      }
-      
-      .card.green .additional .stats {
-        color: #325C46;
-      }
-      
-      .card .additional .stats > div {
-        flex: 1;
-        text-align: center;
-      }
-      
-      .card .additional .stats i {
-        display: block;
-      }
-      
-      .card .additional .stats div.title {
-        font-size: 0.75rem;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      
-      .card .additional .stats div.value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-      }
-      
-      .card .additional .stats div.value.infinity {
-        font-size: 2.5rem;
-      }
-      
-      .card .general {
-        width: 300px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 1;
-        box-sizing: border-box;
-        padding: 1rem;
-        padding-top: 0;
-      }
-      
-      .card .general .more {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        font-size: 0.9em;
-      }
-      
-      
-      
+
+
+    
+   
+    
